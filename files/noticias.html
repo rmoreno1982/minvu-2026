@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noticias | MINVU</title>
+<meta name="description" content="Actividad ministerial, avances de programas y anuncios del Ministerio de Vivienda y Urbanismo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="minvu.css">
+</head>
+<body class="page-noticias">
+
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+<!-- Barra de gobierno -->
+<div class="govbar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
+    <div class="gov-left d-flex align-items-center flex-wrap gap-3">
+      <a class="fono d-inline-flex align-items-center gap-2" href="tel:6009011111">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        MINVU ALO: 600 901 11 11
+      </a>
+      <a class="fono d-inline-flex align-items-center gap-2" href="tel:0229011111">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        02 2 901 11 11
+      </a>
+    </div>
+    <nav class="d-flex align-items-center flex-wrap gap-3" aria-label="Enlaces institucionales">
+      <a href="#">Atención Ciudadana</a>
+      <a href="#">Oficinas</a>
+      <a href="#">Marco Normativo</a>
+      <div class="a11y d-flex align-items-center gap-2" role="group" aria-label="Herramientas de accesibilidad">
+        <button type="button" id="btnContrast" aria-pressed="false" aria-label="Activar alto contraste" title="Alto contraste" onclick="toggleContrast(this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 4v16M12 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button type="button" class="fs" aria-label="Reducir tamaño de texto" title="Reducir texto" onclick="fontStep(-1)"><sup>−</sup>A</button>
+        <button type="button" class="fs" aria-label="Aumentar tamaño de texto" title="Aumentar texto" onclick="fontStep(1)"><sup>+</sup>A</button>
+        <button type="button" id="btnListen" aria-pressed="false" aria-label="Escuchar el contenido de la página" onclick="toggleListen(this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.4 5.6a9 9 0 0 1 0 12.8"/></svg>
+          <span id="listenLbl">Escuchar</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Header principal -->
+<header class="main sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-minvu py-0">
+    <div class="container d-flex align-items-center" style="height:120px">
+      <a class="navbar-brand me-auto" href="minvu-rediseno.html" aria-label="Inicio — Ministerio de Vivienda y Urbanismo, Gobierno de Chile">
+        <img src="logo-minvu-2026.svg" class="logo-gob" alt="Ministerio de Vivienda y Urbanismo, Gobierno de Chile">
+      </a>
+      <div class="collapse navbar-collapse flex-grow-0" id="mainnav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="minvu-rediseno.html#programas">Subsidios Habitacionales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ciudad y Urbanismo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Proveedores y Registros Técnicos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sobre MINVU</a></li>
+        </ul>
+      </div>
+      <button class="search-btn btn ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#searchpanel" aria-expanded="false" aria-controls="searchpanel" aria-label="Abrir buscador">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Buscador general -->
+<div class="collapse search-panel" id="searchpanel">
+  <div class="container py-4">
+    <form role="search" class="d-flex flex-column flex-sm-row gap-3" style="max-width:760px" onsubmit="event.preventDefault()">
+      <input type="search" id="q" class="form-control" placeholder="Busca subsidios, llamados, trámites, noticias…" aria-label="Buscar en el sitio">
+      <button class="btn btn-rojo" type="submit">Buscar</button>
+    </form>
+    <p class="hint">Búsquedas frecuentes:
+      <a href="#">Subsidio de arriendo</a>
+      <a href="#">DS49</a>
+      <a href="#">Resultados de postulación</a>
+      <a href="#">Mejoramiento de vivienda</a>
+    </p>
+  </div>
+</div>
+
+<main id="contenido">
+<div class="hero-dark py-5">
+  <div class="topline"></div>
+  <div class="container">
+    <span class="crumb"><a href="minvu-rediseno.html" class="crumb-link">Portada</a> / Noticias</span>
+    <h1 class="fw-bold mt-3" style="font-size:clamp(28px,3.6vw,40px);line-height:1.15">Noticias</h1>
+    <p class="mt-2 mb-0" style="font-size:16.5px;color:#D5DBF2;max-width:60ch;padding-bottom:12px">Actividad ministerial, avances de programas y anuncios del Ministerio de Vivienda y Urbanismo</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="rsh-form-card mt-4">
+    <form onsubmit="event.preventDefault()">
+      <div class="rsh-form-row">
+        <div class="rsh-field">
+          <label for="fFecha">Fecha desde</label>
+          <input type="date" id="fFecha" class="form-control" onchange="aplicarFiltros()">
+        </div>
+        <div class="rsh-field">
+          <label for="fOrden">Ordenar por</label>
+          <select id="fOrden" class="form-select" onchange="aplicarFiltros()">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguas">Más antiguas</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <div class="d-flex gap-2 flex-wrap mt-4" role="group" aria-label="Filtrar por categoría">
+      <button type="button" class="tab-filtro" data-cat="todas" aria-pressed="true" onclick="filtrarCat('todas',this)">Todas</button>
+      <button type="button" class="tab-filtro" data-cat="Espacios Públicos" aria-pressed="false" onclick="filtrarCat('Espacios Públicos',this)">Espacios Públicos</button>
+      <button type="button" class="tab-filtro" data-cat="Habitacionales" aria-pressed="false" onclick="filtrarCat('Habitacionales',this)">Habitacionales</button>
+      <button type="button" class="tab-filtro" data-cat="Reconstrucción" aria-pressed="false" onclick="filtrarCat('Reconstrucción',this)">Reconstrucción</button>
+      <button type="button" class="tab-filtro" data-cat="Subsidios" aria-pressed="false" onclick="filtrarCat('Subsidios',this)">Subsidios</button>
+    </div>
+  </div>
+
+  <p class="mt-4 mb-3 text-ink-soft" id="resultsCount" role="status">Mostrando <strong style="color:var(--navy)">12</strong> noticias.</p>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="newsGrid">
+    <div class="col"><a class="news-item" data-cat="Reconstrucción" data-date="2026-06-30" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: conferencia PUCV
+Valparaíso</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-amber-solid cat">Reconstrucción</span>
+        <h3>Ministro Poduje analizó los desafíos de la reconstrucción y el desarrollo urbano de la Región de Valparaíso en conferencia de la PUCV</h3>
+        <span class="date">30 jun 2026</span>
+        <p>En el inicio del año académico de la Escuela de Ingeniería de Construcción y Transporte de la PUCV, el secretario de Estado expuso sobre el Plan MINVU 2030.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Subsidios" data-date="2026-06-28" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: campaña
+Subsidio de Arriendo</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-danger cat">Subsidios</span>
+        <h3>Minvu anuncia la próxima apertura del llamado al Subsidio de Arriendo de 2026</h3>
+        <span class="date">28 jun 2026</span>
+        <p>Las postulaciones a este beneficio estarán abiertas entre el 7 de julio y el 7 de agosto próximos y podrán hacerse 100% en línea.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Subsidios" data-date="2026-06-20" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: lanzamiento
+Subsidio Sectores Medios</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-danger cat">Subsidios</span>
+        <h3>Minvu anuncia la apertura del primer llamado de 2026 al Subsidio para Sectores Medios</h3>
+        <span class="date">20 jun 2026</span>
+        <p>El beneficio, conocido como DS1, está dirigido a familias de ingresos medios que buscan comprar una vivienda nueva o usada, o construir una en sitio propio.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Subsidios" data-date="2026-06-13" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: entrega de certificados
+Región Metropolitana</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-danger cat">Subsidios</span>
+        <h3>Ministro Iván Poduje encabeza la entrega de más de dos mil subsidios para sectores medios en la Región Metropolitana</h3>
+        <span class="date">13 jun 2026</span>
+        <p>En la actividad se entregaron cerca de dos mil certificados a personas beneficiarias del DS1, de un total de casi 7.800 a nivel nacional.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Habitacionales" data-date="2026-06-10" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: sitio eriazo
+Concepción</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-navy cat">Habitacionales</span>
+        <h3>Ministro Iván Poduje anuncia recuperación de sitio eriazo en Concepción para construir un polideportivo y un futuro proyecto habitacional</h3>
+        <span class="date">10 jun 2026</span>
+        <p>La iniciativa, enmarcada en el plan "Sitio Eriazo Cero", transformará un terreno Serviu en desuso en un nuevo polideportivo municipal y un proyecto de vivienda.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Habitacionales" data-date="2026-06-05" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: Expo Vivienda
+BancoEstado</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-navy cat">Habitacionales</span>
+        <h3>Minvu anuncia nuevo Tramo 4.000 en Expo Vivienda y BancoEstado presenta "Hipotecario Pro"</h3>
+        <span class="date">5 jun 2026</span>
+        <p>Junto al ministro de Vivienda y Urbanismo, Iván Poduje, el presidente del banco entregó los detalles de estas iniciativas de apoyo al crédito hipotecario.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Espacios Públicos" data-date="2026-05-22" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: plaza renovada
+Regeneración Urbana</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-ok-solid cat">Espacios Públicos</span>
+        <h3>Minvu inaugura renovación de plaza central y espacios comunitarios en el marco del Plan de Regeneración Urbana</h3>
+        <span class="date">22 may 2026</span>
+        <p>La intervención contempló nuevo mobiliario, arborización y áreas de juego accesibles para la comunidad del sector.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Habitacionales" data-date="2026-07-05" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: entrega de llaves
+Antofagasta</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-navy cat">Habitacionales</span>
+        <h3>Familias de Antofagasta reciben las llaves de sus nuevas viviendas del Programa para Sectores Medios</h3>
+        <span class="date">5 jul 2026</span>
+        <p>96 familias completaron su proceso de ahorro y acceden a su primera vivienda propia mediante subsidio D.S.1.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Reconstrucción" data-date="2026-07-02" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: inicio de obras
+Copiapó</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-amber-solid cat">Reconstrucción</span>
+        <h3>Ministro Montes y ministra Sandoval encabezan inicio de obras de dos proyectos habitacionales en Copiapó</h3>
+        <span class="date">2 jul 2026</span>
+        <p>En total beneficiarán a 240 familias de la región de Atacama afectadas por el sistema frontal de 2025.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Habitacionales" data-date="2026-06-28" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: conjunto habitacional
+Huasco</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-navy cat">Habitacionales</span>
+        <h3>Avanza el PEH en Atacama: se inaugura el conjunto habitacional más grande en la historia de la comuna de Huasco</h3>
+        <span class="date">28 jun 2026</span>
+        <p>El conjunto beneficia a 377 familias con subsidio D.S.1 y complemento Serviu.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Espacios Públicos" data-date="2026-05-14" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: fiscalización técnica
+Valparaíso</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-ok-solid cat">Espacios Públicos</span>
+        <h3>Serviu Valparaíso refuerza fiscalización técnica de proyectos habitacionales en la región</h3>
+        <span class="date">14 may 2026</span>
+        <p>Nuevo protocolo busca garantizar la calidad estructural de las viviendas entregadas a familias beneficiarias.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+    <div class="col"><a class="news-item" data-cat="Subsidios" data-date="2026-07-16" href="noticia-el-olivar.html">
+      <div class="ph-img">foto: inspección técnica
+El Olivar, Viña del Mar</div>
+      <div class="body">
+        <span class="badge rounded-pill badge-danger cat">Subsidios</span>
+        <h3>Ante denuncia de vecinos, Ministro Poduje inspecciona vivienda de El Olivar que cedió ante las primeras lluvias en Viña del Mar</h3>
+        <span class="date">16 jul 2026</span>
+        <p>La vivienda ejecutada por la constructora San Sebastián se desprendió durante esta jornada, evidenciando fallas estructurales detectadas por la DITEC e IDIEM.</p>
+        <span class="btn btn-outline-navy btn-sm align-self-start">Ir al detalle</span>
+      </div>
+    </a></div>
+  </div>
+  <p id="noResults" class="d-none text-center text-ink-soft my-5">No encontramos noticias que coincidan con tu búsqueda.</p>
+
+  <nav id="pager" aria-label="Paginación de noticias" class="my-5">
+    <ul class="pagination pagination-institucional justify-content-center mb-0" id="pagerList"></ul>
+  </nav>
+</div>
+</main>
+
+<!-- Firma gráfica 2026: doble línea azul/roja del faldón -->
+<div class="brand-rule" aria-hidden="true"></div>
+
+<!-- Footer -->
+<footer class="py-5">
+  <div class="container">
+    <div class="foot-grid row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      <div>
+        <h2>Ministerio de Vivienda y Urbanismo</h2>
+        <p>Alameda 924, Santiago, Chile.<br>Código postal 6513482<br>Call center: 600 901 1111</p>
+      </div>
+      <div>
+        <h2>Institución</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Sobre MINVU</a></li>
+          <li class="mb-2"><a href="noticias.html">Noticias</a></li>
+          <li class="mb-2"><a href="#">Oficinas</a></li>
+          <li class="mb-2"><a href="#">Marco Normativo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Atención y transparencia</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Atención Ciudadana (OIRS)</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Transparencia Proactiva</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Solicitud de Información Ley de Transparencia</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Gobierno Transparente</a></li>
+          <li class="mb-2"><a href="#">Código de Ética</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom mt-5 pt-4 d-flex justify-content-between flex-wrap gap-3" style="font-size:13.5px">
+      <span>Gobierno de Chile · Trabajando para Usted</span>
+      <span><a href="#">Atención Ciudadana</a> · <a href="#">Accesibilidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('searchpanel').addEventListener('shown.bs.collapse', () => {
+  document.getElementById('q').focus();
+});
+let curCat = 'todas';
+let currentPage = 1;
+let filteredCols = [];
+const perPage = 6;
+
+function filtrarCat(cat, btn){
+  curCat = cat;
+  document.querySelectorAll('.tab-filtro').forEach(b=>b.setAttribute('aria-pressed', b===btn));
+  aplicarFiltros();
+}
+
+function aplicarFiltros(){
+  const desde = document.getElementById('fFecha').value;
+  const orden = document.getElementById('fOrden').value;
+  const grid = document.getElementById('newsGrid');
+  const cols = Array.from(grid.querySelectorAll(':scope > .col'));
+
+  cols.sort((a,b)=>{
+    const da = a.querySelector('.news-item').dataset.date;
+    const db = b.querySelector('.news-item').dataset.date;
+    return orden === 'recientes' ? (db > da ? 1 : -1) : (da > db ? 1 : -1);
+  });
+  cols.forEach(col=>grid.appendChild(col));
+
+  filteredCols = cols.filter(col=>{
+    const c = col.querySelector('.news-item');
+    const okCat = curCat === 'todas' || c.dataset.cat === curCat;
+    const okFecha = !desde || c.dataset.date >= desde;
+    return okCat && okFecha;
+  });
+
+  currentPage = 1;
+  renderPage(cols);
+}
+
+function renderPage(allCols){
+  allCols.forEach(col=>col.classList.add('d-none'));
+  const start = (currentPage - 1) * perPage;
+  filteredCols.slice(start, start + perPage).forEach(col=>col.classList.remove('d-none'));
+
+  document.getElementById('resultsCount').innerHTML = 'Mostrando <strong style="color:var(--navy)">' + filteredCols.length + '</strong> noticias.';
+  document.getElementById('noResults').classList.toggle('d-none', filteredCols.length !== 0);
+  renderPager();
+}
+
+function renderPager(){
+  const totalPages = Math.ceil(filteredCols.length / perPage);
+  const list = document.getElementById('pagerList');
+  list.innerHTML = '';
+  if(totalPages <= 1){ return; }
+
+  const li = (label, page, opts = {}) => {
+    const item = document.createElement('li');
+    item.className = 'page-item' + (opts.disabled ? ' disabled' : '') + (opts.active ? ' active' : '');
+    const link = document.createElement(opts.active ? 'span' : 'a');
+    link.className = 'page-link';
+    link.textContent = label;
+    if(!opts.active){
+      link.href = '#';
+      link.setAttribute('aria-label', opts.ariaLabel || ('Página ' + page));
+      link.addEventListener('click', e=>{ e.preventDefault(); if(!opts.disabled) irAPagina(page); });
+    } else {
+      link.setAttribute('aria-current', 'page');
+    }
+    item.appendChild(link);
+    return item;
+  };
+
+  list.appendChild(li('‹ Anterior', currentPage - 1, { disabled: currentPage === 1, ariaLabel: 'Página anterior' }));
+  for(let p = 1; p <= totalPages; p++){
+    list.appendChild(li(String(p), p, { active: p === currentPage }));
+  }
+  list.appendChild(li('Siguiente ›', currentPage + 1, { disabled: currentPage === totalPages, ariaLabel: 'Página siguiente' }));
+}
+
+function irAPagina(page){
+  currentPage = page;
+  const grid = document.getElementById('newsGrid');
+  renderPage(Array.from(grid.querySelectorAll(':scope > .col')));
+  document.getElementById('newsGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.addEventListener('DOMContentLoaded', aplicarFiltros);
+</script>
+
+<script>
+/* ---- Menú de accesibilidad ---- */
+function toggleContrast(btn){
+  const on = document.documentElement.classList.toggle('contrast');
+  btn.setAttribute('aria-pressed', on);
+  btn.setAttribute('aria-label', on ? 'Desactivar alto contraste' : 'Activar alto contraste');
+}
+let fsLevel = 0; /* -2 a +4, pasos de 10% */
+function fontStep(dir){
+  fsLevel = Math.max(-2, Math.min(4, fsLevel + dir));
+  document.body.style.zoom = 1 + fsLevel * 0.1;
+}
+let speaking = false;
+function toggleListen(btn){
+  const lbl = document.getElementById('listenLbl');
+  if(!('speechSynthesis' in window)){ lbl.textContent = 'No disponible'; return; }
+  if(speaking){
+    speechSynthesis.cancel();
+    speaking = false;
+    btn.setAttribute('aria-pressed','false');
+    lbl.textContent = 'Escuchar';
+    return;
+  }
+  const sel = window.getSelection().toString().trim();
+  const texto = sel || document.getElementById('contenido').innerText.slice(0, 6000);
+  const u = new SpeechSynthesisUtterance(texto);
+  u.lang = 'es-CL';
+  u.rate = 0.95;
+  u.onend = u.onerror = () => {
+    speaking = false;
+    btn.setAttribute('aria-pressed','false');
+    lbl.textContent = 'Escuchar';
+  };
+  speechSynthesis.speak(u);
+  speaking = true;
+  btn.setAttribute('aria-pressed','true');
+  lbl.textContent = 'Detener';
+}
+</script>
+
+</body>
+</html>

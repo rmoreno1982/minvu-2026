@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa para Sectores Medios (D.S.1) | MINVU</title>
+<meta name="description" content="Programa para Sectores Medios (D.S.1): subsidio para comprar o construir tu vivienda. Tramos, llamados vigentes, resultados y otros beneficios habitacionales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Mulish:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="minvu.css">
+</head>
+<body class="page-programa" data-bs-spy="scroll" data-bs-target="#pagenav" data-bs-offset="190">
+
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+<!-- Barra de gobierno -->
+<div class="govbar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap py-2">
+    <div class="gov-left d-flex align-items-center flex-wrap gap-3">
+      <a class="fono d-inline-flex align-items-center gap-2" href="tel:6009011111">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        MINVU ALO: 600 901 11 11
+      </a>
+      <a class="fono d-inline-flex align-items-center gap-2" href="tel:0229011111">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        02 2 901 11 11
+      </a>
+    </div>
+    <nav class="d-flex align-items-center flex-wrap gap-3" aria-label="Enlaces institucionales">
+      <a href="#">Atención Ciudadana</a>
+      <a href="#">Oficinas</a>
+      <a href="#">Marco Normativo</a>
+      <div class="a11y d-flex align-items-center gap-2" role="group" aria-label="Herramientas de accesibilidad">
+        <button type="button" id="btnContrast" aria-pressed="false" aria-label="Activar alto contraste" title="Alto contraste" onclick="toggleContrast(this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 4v16M12 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button type="button" class="fs" aria-label="Reducir tamaño de texto" title="Reducir texto" onclick="fontStep(-1)"><sup>−</sup>A</button>
+        <button type="button" class="fs" aria-label="Aumentar tamaño de texto" title="Aumentar texto" onclick="fontStep(1)"><sup>+</sup>A</button>
+        <button type="button" id="btnListen" aria-pressed="false" aria-label="Escuchar el contenido de la página" onclick="toggleListen(this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.4 5.6a9 9 0 0 1 0 12.8"/></svg>
+          <span id="listenLbl">Escuchar</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Header principal -->
+<header class="main sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-minvu py-0">
+    <div class="container d-flex align-items-center" style="height:120px">
+      <a class="navbar-brand me-auto" href="minvu-rediseno.html" aria-label="Inicio — Ministerio de Vivienda y Urbanismo, Gobierno de Chile">
+        <img src="logo-minvu-2026.svg" class="logo-gob" alt="Ministerio de Vivienda y Urbanismo, Gobierno de Chile">
+      </a>
+      <div class="collapse navbar-collapse flex-grow-0" id="mainnav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="minvu-rediseno.html#programas">Subsidios Habitacionales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ciudad y Urbanismo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Proveedores y Registros Técnicos</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sobre MINVU</a></li>
+        </ul>
+      </div>
+      <button class="search-btn btn ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#searchpanel" aria-expanded="false" aria-controls="searchpanel" aria-label="Abrir buscador">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Buscador general -->
+<div class="collapse search-panel" id="searchpanel">
+  <div class="container py-4">
+    <form role="search" class="d-flex flex-column flex-sm-row gap-3" style="max-width:760px" onsubmit="event.preventDefault()">
+      <input type="search" id="q" class="form-control" placeholder="Busca subsidios, llamados, trámites, noticias…" aria-label="Buscar en el sitio">
+      <button class="btn btn-rojo" type="submit">Buscar</button>
+    </form>
+    <p class="hint">Búsquedas frecuentes:
+      <a href="#">Subsidio de arriendo</a>
+      <a href="#">DS49</a>
+      <a href="#">Resultados de postulación</a>
+      <a href="#">Mejoramiento de vivienda</a>
+    </p>
+  </div>
+</div>
+
+<main id="contenido">
+<div class="finder-bar">
+  <div class="container d-flex flex-wrap align-items-center gap-3 py-3">
+    <strong>¿A qué subsidio puedo postular?</strong>
+    <span class="hint">Selecciona tu Registro Social de Hogares</span>
+    <label class="d-flex align-items-center gap-2">
+      <span class="visually-hidden">Tramo RSH</span>
+      <select class="form-select">
+        <option>Hasta 40%</option>
+        <option>Hasta 60%</option>
+        <option>Hasta 80%</option>
+        <option>Hasta 90%</option>
+      </select>
+    </label>
+    <button type="button" class="btn-buscar">Buscar</button>
+  </div>
+</div>
+
+<section id="resumen">
+<div class="hero-panel">
+  <div class="topline"></div>
+  <div class="container pt-4">
+    <span class="crumb">Portada / Programa para Sectores Medios</span>
+  </div>
+  <div class="container split-flex py-4">
+    <div class="split-59 d-flex align-items-stretch gap-3">
+      <div style="width:6px;background:var(--rojo);border-radius:3px;flex:none"></div>
+      <div>
+        <h1 class="fw-bold" style="font-size:clamp(30px,4vw,44px);line-height:1.08">Programa para<br>Sectores Medios</h1>
+        <p class="mt-2" style="font-size:17px;color:#D5DBF2;">Es un aporte económico del Estado que, junto a ahorros propios y crédito hipotecario, permite comprar o construir una vivienda nueva o usada.</p>
+        <div class="share-row-dark mt-4">
+          <span class="lbl">Compartir</span>
+          <a href="#" aria-label="Compartir en X">X</a>
+          <a href="#" aria-label="Compartir en Facebook">f</a>
+          <a href="#" aria-label="Compartir en WhatsApp">W</a>
+        </div>
+      </div>
+    </div>
+    <div class="split-41 datos-clave">
+      <span class="titulo">Datos clave</span>
+      <p class="bajada-clave">Dirigido a Personas sin vivienda propia, que cuenten con ahorro para la vivienda y puedan acceder a crédito hipotecario.</span>
+      <div class="mt-3">
+        <div class="dc-row"><span>Tramo RSH objetivo</span><b>Hasta 90%</b></div>
+        <div class="dc-row"><span>Montos</span><b>1.100 UF</b>-<b>1.600 UF</b>-<b>2.200 UF</b></div>
+        <div class="dc-row"><span>Modalidad de Postulación</span><b>Individual y Colectiva</b></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<nav class="pagenav" id="pagenav" style="top:120px" aria-label="En esta página">
+  <div class="container">
+    <div class="nav" style="overflow-x:auto;flex-wrap:nowrap">
+      <a href="#resumen" class="nav-link">Resumen</a>
+      <a href="#cuando" class="nav-link">Cuándo postular</a>
+      <a href="#opciones" class="nav-link">Opciones</a>
+      <a href="#llamados" class="nav-link">Llamados y resultados</a>
+      <a href="#proyectos" class="nav-link">Proyectos</a>
+      <a href="#beneficios" class="nav-link">Otros beneficios</a>
+    </div>
+  </div>
+</nav>
+
+<section id="cuando" class="py-5" aria-labelledby="cuando-postular-h">
+  <div class="container">
+    <h2 id="cuando-postular-h" class="h2-interna text-center">¿Cuándo postular?</h2>
+    <div class="mx-auto mt-4" style="max-width:760px">
+      <div class="cal-track">
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-highlight"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-bar"></span>
+        <span class="cal-highlight"></span>
+        <span class="cal-bar-2"></span>
+      </div>
+      <div class="cal-labels">
+        <span class="cal-month">Ene</span>
+        <span class="cal-month">Feb</span>
+        <span class="cal-month">Mar</span>
+        <span class="cal-month">Abr</span>
+        <span class="cal-month-2">May</span>
+        <span class="cal-month">Jun</span>
+        <span class="cal-month">Jul</span>
+        <span class="cal-month">Ago</span>
+        <span class="cal-month">Sep</span>
+        <span class="cal-month">Oct</span>
+        <span class="cal-month-2">Nov</span>
+        <span class="cal-month">Dic</span>
+      </div>
+    </div>
+    <p class="text-center text-ink-soft mt-4">Ventana de postulación referencial: <strong style="color:var(--navy)">mayo</strong> y <strong style="color:var(--navy)">noviembre</strong>. Estas fechas son aproximadas y pueden variar según llamado.</p>
+  </div>
+</section>
+
+<section id="opciones" class="py-5" style="background:#EAF2FA" aria-labelledby="opciones-h">
+  <div class="container">
+    <h2 id="opciones-h" class="h2-interna text-center mb-4">Opciones del programa</h2>
+    <div class="row g-3">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="opt-card h-100">
+          <span class="badge rounded-pill badge-ok-solid align-self-start">Comprar Vivienda</span>
+          <h3 class="card-title">D.S.1 · Tramo 1</h3>
+          <span class="label-sm mt-1" style="color:var(--ok)">Hasta 40% Registro Social de Hogares</span>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">Permite a familias que no son dueñas de una vivienda y tienen capacidad de ahorro, acceder a una ayuda económica para comprar una casa o departamento nuevo o usado de un valor máximo de 1.100 UF.</p>
+          <a href="#" class="go">Conócelo más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="opt-card h-100">
+          <span class="badge rounded-pill badge-ok-solid align-self-start">Comprar Vivienda</span>
+          <h3 class="card-title">D.S.1 · Tramo 2</h3>
+          <span class="label-sm mt-1" style="color:var(--ok)">Hasta 70% Registro Social de Hogares</span>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">Permite a familias que no son dueñas de una vivienda y tienen capacidad de ahorro, acceder a una ayuda económica para comprar una casa o departamento nuevo o usado de un valor máximo de 1.600 UF.</p>
+          <a href="#" class="go">Conócelo más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="opt-card h-100">
+          <span class="badge rounded-pill badge-ok-solid align-self-start">Comprar Vivienda</span>
+          <h3 class="card-title">D.S.1 · Tramo 3</h3>
+          <span class="label-sm mt-1" style="color:var(--ok)">Hasta 90% Registro Social de Hogares</span>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">Permite a familias que no son dueñas de una vivienda y tienen capacidad de ahorro, acceder a una ayuda económica para comprar una casa o departamento nuevo o usado de un valor máximo de 2.200 UF.</p>
+          <a href="#" class="go">Conócelo más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="opt-card opt-card-construir h-100">
+          <span class="badge rounded-pill badge-amber-solid align-self-start">Construir Vivienda</span>
+          <h3 class="card-title">D.S.1 · Tramo 2</h3>
+          <span class="label-sm mt-1" style="color:#B4690E">Hasta 70% Registro Social de Hogares</span>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">Este apoyo del Estado permite a las familias que no son dueñas de una vivienda construir una vivienda de hasta 140 m² en un sitio propio o densificación predial.</p>
+          <a href="#" class="go">Conócelo más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-6">
+        <div class="opt-card opt-card-construir h-100">
+          <span class="badge rounded-pill badge-amber-solid align-self-start">Construir Vivienda</span>
+          <h3 class="card-title">D.S.1 · Tramo 3</h3>
+          <span class="label-sm mt-1" style="color:#B4690E">Hasta 90% Registro Social de Hogares</span>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">Este apoyo del Estado permite a las familias que no son dueñas de una vivienda construir una vivienda de hasta 140 m² en un sitio propio, o edificar en un terreno donde ya existe otra.</p>
+          <a href="#" class="go">Conócelo más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="llamados" class="py-5" aria-labelledby="llamados-h">
+  <div class="container">
+    <h2 id="llamados-h" class="h2-interna text-center mb-4">Llamados y resultados</h2>
+    <div class="d-flex gap-2 justify-content-center flex-wrap mb-4" role="group" aria-label="Filtrar llamados por estado">
+      <button type="button" class="tab-filtro" data-state="todos" aria-pressed="true" onclick="filterCalls('todos', this)">Todos <span class="n">(5)</span></button>
+      <button type="button" class="tab-filtro" data-state="open" aria-pressed="false" onclick="filterCalls('open', this)">Vigentes <span class="n">(2)</span></button>
+      <button type="button" class="tab-filtro" data-state="results" aria-pressed="false" onclick="filterCalls('results', this)">Con resultados <span class="n">(2)</span></button>
+      <button type="button" class="tab-filtro" data-state="closed" aria-pressed="false" onclick="filterCalls('closed', this)">Cerrados <span class="n">(1)</span></button>
+    </div>
+    <div id="calllist" class="d-flex flex-column gap-3">
+      <a class="call d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4" data-state="open" href="#">
+        <span class="badge rounded-pill badge-ok flex-shrink-0">Vigente</span>
+        <div class="flex-grow-1">
+          <h3>Llamado a Postulación Especial: Programa de Vivienda para Organizaciones de Trabajadores 2026</h3>
+          <p class="meta">Dirigido a personas agrupadas colectivamente en sindicatos o asociaciones gremiales.</p>
+        </div>
+        <div class="dates flex-shrink-0"><div class="lbl">Postulación</div><div class="rng">02 jul – 30 oct</div></div>
+      </a>
+      <a class="call d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4" data-state="open" href="#">
+        <span class="badge rounded-pill badge-ok flex-shrink-0">Vigente</span>
+        <div class="flex-grow-1">
+          <h3>Subsidio de Arriendo: Llamado Especial para Personas Mayores y con Discapacidad 2026</h3>
+          <p class="meta">Llamado especial con requisitos preferentes de postulación.</p>
+        </div>
+        <div class="dates flex-shrink-0"><div class="lbl">Postulación</div><div class="rng">08 jul – 30 ago</div></div>
+      </a>
+      <a class="call d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4" data-state="results" href="#">
+        <span class="badge rounded-pill badge-info flex-shrink-0">Resultados</span>
+        <div class="flex-grow-1">
+          <h3>Llamado Nacional 2025 en condiciones especiales para el Subsidio para Sectores Medios (D.S.1)</h3>
+          <p class="meta">Resultados publicados el 05 de julio de 2026.</p>
+        </div>
+        <div class="dates flex-shrink-0"><div class="lbl">Publicado</div><div class="rng">05 jul</div></div>
+      </a>
+      <a class="call d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4" data-state="results" href="#">
+        <span class="badge rounded-pill badge-info flex-shrink-0">Resultados</span>
+        <div class="flex-grow-1">
+          <h3>Llamado Nacional de Eficiencia Energética 2026 — Primer corte</h3>
+          <p class="meta">Resultados publicados el 28 de junio de 2026.</p>
+        </div>
+        <div class="dates flex-shrink-0"><div class="lbl">Publicado</div><div class="rng">28 jun</div></div>
+      </a>
+      <a class="call d-flex flex-column flex-md-row align-items-md-center gap-3 gap-md-4" data-state="closed" href="#">
+        <span class="badge rounded-pill badge-closed flex-shrink-0">Cerrado</span>
+        <div class="flex-grow-1">
+          <h3>Primer Llamado Nacional en condiciones especiales para postular al Subsidio para Sectores Medios (D.S.1)</h3>
+          <p class="meta">Familias con capacidad de ahorro y posibilidad de complementar con crédito hipotecario.</p>
+        </div>
+        <div class="dates flex-shrink-0"><div class="lbl">Cerró el</div><div class="rng">23 may</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="py-5" style="background:#FBEAEE" aria-labelledby="proyectos-h">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+      <h2 id="proyectos-h" class="h2-interna mb-0">Temas Relacionados</h2>
+      <div class="d-flex gap-2">
+        <button type="button" aria-label="Anterior" onclick="document.getElementById('rail').scrollBy({left:-400,behavior:'smooth'})" class="rail-arrow">‹</button>
+        <button type="button" aria-label="Siguiente" onclick="document.getElementById('rail').scrollBy({left:400,behavior:'smooth'})" class="rail-arrow">›</button>
+      </div>
+    </div>
+    <div id="rail" class="scroll-rail">
+      <div class="rail-card">
+        <div class="ph-img">foto: entrega de proyecto
+Copiapó</div>
+        <div class="body">
+          <h3 class="card-title mt-0">Avanza el PEH en Atacama: se inaugura el conjunto habitacional más grande en la historia de la comuna de Huasco</h3>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">En total beneficiarán a 240 familias de la región de Atacama.</p>
+          <a href="#" class="btn btn-azul btn-sm-pill mt-3">Saber más</a>
+        </div>
+      </div>
+      <div class="rail-card">
+        <div class="ph-img">foto: entrega de proyecto
+Huasco</div>
+        <div class="body">
+          <h3 class="card-title mt-0">Avanza el PEH en Atacama: se inaugura el conjunto habitacional más grande en la historia de la comuna de Huasco</h3>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">El conjunto beneficia a 377 familias con subsidio D.S.1 y complemento SERVIU.</p>
+          <a href="#" class="btn btn-azul btn-sm-pill mt-3">Saber más</a>
+        </div>
+      </div>
+      <div class="rail-card">
+        <div class="ph-img">foto: entrega de proyecto
+Antofagasta</div>
+        <div class="body">
+          <h3 class="card-title mt-0">Familias de Antofagasta reciben las llaves de sus nuevas viviendas del Programa para Sectores Medios</h3>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">96 familias completaron su proceso de ahorro y acceden a su primera vivienda propia.</p>
+          <a href="#" class="btn btn-azul btn-sm-pill mt-3">Saber más</a>
+        </div>
+      </div>
+      <div class="rail-card">
+        <div class="ph-img">foto: entrega de proyecto
+Antofagasta</div>
+        <div class="body">
+          <h3 class="card-title mt-0">Familias de Antofagasta reciben las llaves de sus nuevas viviendas del Programa para Sectores Medios</h3>
+          <p class="mt-2 text-ink-soft" style="font-size:14px">96 familias completaron su proceso de ahorro y acceden a su primera vivienda propia.</p>
+          <a href="#" class="btn btn-azul btn-sm-pill mt-3">Saber más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" class="py-5" aria-labelledby="beneficios-h">
+  <div class="container">
+    <h2 id="beneficios-h" class="h2-interna text-center mb-4">Otros beneficios habitacionales que puedes conocer</h2>
+    <div class="d-flex flex-column flex-md-row gap-4">
+      <nav class="side-fixed" style="--side-w:210px" aria-label="Filtrar por necesidad">
+        <span class="d-block fw-bold mb-2" style="font-family:var(--font-display);color:var(--azul);font-size:14px">¿Cuál es tu necesidad?</span>
+        <div class="d-flex flex-column gap-1">
+          <button type="button" class="side-filter-btn" data-cat="comprar" aria-pressed="true" onclick="filterNecesidad('comprar', this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg>Comprar</button>
+          <button type="button" class="side-filter-btn" data-cat="construir" aria-pressed="false" onclick="filterNecesidad('construir', this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 6l4 4-9 9-5 1 1-5z"></path><path d="M17.5 2.5l4 4"></path></svg>Construir</button>
+          <button type="button" class="side-filter-btn" data-cat="arrendar" aria-pressed="false" onclick="filterNecesidad('arrendar', this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"></circle><path d="M11.5 11.5 21 21"></path></svg>Arrendar</button>
+          <button type="button" class="side-filter-btn" data-cat="mejorar" aria-pressed="false" onclick="filterNecesidad('mejorar', this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3H18.3a2 2 0 0 0 1.7-3l-5-9V3"></path><path d="M8.5 3h7"></path></svg>Mejorar</button>
+        </div>
+      </nav>
+      <div id="benefgrid" class="row row-cols-1 row-cols-md-2 g-3 flex-grow-1">
+        <div class="col"><a class="benef benef-azul" data-cat="comprar" href="#">
+          <span class="fam">Sistema Integrado D.S.1</span>
+          <h3 class="card-title">D.S.1 · Tramo 1: comprar hasta 1.100 UF</h3>
+          <span class="label-sm" style="color:var(--navy)">Hasta 40% RSH</span>
+          <p>Ayuda económica para comprar una vivienda nueva o usada de valor máximo 1.100 UF.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col"><a class="benef benef-azul" data-cat="comprar" href="#">
+          <span class="fam">Sistema Integrado D.S.1</span>
+          <h3 class="card-title">D.S.1 · Tramo 2: comprar hasta 1.600 UF</h3>
+          <span class="label-sm" style="color:var(--navy)">Hasta 60% RSH</span>
+          <p>Ayuda económica para comprar una vivienda nueva o usada de valor máximo 1.600 UF.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col"><a class="benef benef-purple" data-cat="comprar" href="#">
+          <span class="fam">Fondo Solidario D.S.49</span>
+          <h3 class="card-title">Comprar vivienda construida hasta 950 UF</h3>
+          <span class="label-sm" style="color:#6B3FA0">Hasta 80% RSH</span>
+          <p>Para familias en vulnerabilidad social y necesidad habitacional, sin crédito hipotecario.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col"><a class="benef benef-azul" data-cat="comprar" href="#">
+          <span class="fam">Sistema Integrado D.S.1</span>
+          <h3 class="card-title">D.S.1 · Tramo 3: comprar hasta 2.200 UF</h3>
+          <span class="label-sm" style="color:var(--navy)">Hasta 90% RSH</span>
+          <p>Ayuda económica para comprar una vivienda nueva o usada de valor máximo 2.200 UF.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col"><a class="benef benef-rojo" data-cat="comprar" href="#">
+          <span class="fam">Integración Social D.S.19</span>
+          <h3 class="card-title">Programa de Integración Social y Territorial</h3>
+          <span class="label-sm" style="color:var(--rojo)">Hasta 90% RSH</span>
+          <p>Acceso a proyectos en barrios bien localizados y cercanos a servicios.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col"><a class="benef benef-cyan" data-cat="comprar" href="#">
+          <span class="fam">Leasing Habitacional</span>
+          <h3 class="card-title">Leasing Habitacional</h3>
+          <span class="label-sm" style="color:#0EA5C4">Hasta 90% RSH</span>
+          <p>Acceso a oferta privada de viviendas mediante contrato de arrendamiento con promesa de compraventa.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col d-none"><a class="benef benef-amber" data-cat="construir" href="#">
+          <span class="fam">Sistema Integrado D.S.1</span>
+          <h3 class="card-title">D.S.1: construir en sitio propio hasta 1.600 UF</h3>
+          <span class="label-sm" style="color:#B4690E">Hasta 70% RSH</span>
+          <p>Financia la construcción de una vivienda en un terreno propio o de un familiar.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col d-none"><a class="benef benef-azul" data-cat="arrendar" href="#">
+          <span class="fam">Apoyo al arriendo</span>
+          <h3 class="card-title">Programa de Arriendo de Vivienda</h3>
+          <span class="label-sm" style="color:var(--navy)">Hasta 90% RSH</span>
+          <p>Aporte mensual del Estado para arrendar mientras reúnes condiciones para vivienda propia.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+        <div class="col d-none"><a class="benef benef-rojo-dark" data-cat="mejorar" href="#">
+          <span class="fam">Mejoramiento</span>
+          <h3 class="card-title">Programa de Mejoramiento de Viviendas y Barrios</h3>
+          <span class="label-sm" style="color:var(--rojo-dark)">Hasta 90% RSH</span>
+          <p>Financia reparaciones, ampliaciones y mejoras en espacios comunes de tu barrio.</p>
+          <span class="go">Conócelo más »</span>
+        </a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Firma gráfica 2026: doble línea azul/roja del faldón -->
+<div class="brand-rule" aria-hidden="true"></div>
+
+<!-- Footer -->
+<footer class="py-5">
+  <div class="container">
+    <div class="foot-grid row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      <div>
+        <h2>Ministerio de Vivienda y Urbanismo</h2>
+        <p>Alameda 924, Santiago, Chile.<br>Código postal 6513482<br>Call center: 600 901 1111</p>
+      </div>
+      <div>
+        <h2>Institución</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Sobre MINVU</a></li>
+          <li class="mb-2"><a href="noticias.html">Noticias</a></li>
+          <li class="mb-2"><a href="#">Oficinas</a></li>
+          <li class="mb-2"><a href="#">Marco Normativo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Atención y transparencia</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Atención Ciudadana (OIRS)</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Transparencia Proactiva</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Solicitud de Información Ley de Transparencia</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Gobierno Transparente</a></li>
+          <li class="mb-2"><a href="#">Código de Ética</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom mt-5 pt-4 d-flex justify-content-between flex-wrap gap-3" style="font-size:13.5px">
+      <span>Gobierno de Chile · Trabajando para Usted</span>
+      <span><a href="#">Atención Ciudadana</a> · <a href="#">Accesibilidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+function filterCalls(state, btn){
+  document.querySelectorAll('#llamados .tab-filtro').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+  btn.setAttribute('aria-pressed','true');
+  document.querySelectorAll('#calllist .call').forEach(function(c){
+    c.classList.toggle('d-none', !(state==='todos' || c.dataset.state===state));
+  });
+}
+function filterNecesidad(cat, btn){
+  document.querySelectorAll('.side-filter-btn').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+  btn.setAttribute('aria-pressed','true');
+  document.querySelectorAll('#benefgrid .benef').forEach(function(c){
+    c.parentElement.classList.toggle('d-none', c.dataset.cat!==cat);
+  });
+}
+document.getElementById('searchpanel').addEventListener('shown.bs.collapse', () => {
+  document.getElementById('q').focus();
+});
+</script>
+
+<script>
+/* ---- Menú de accesibilidad ---- */
+function toggleContrast(btn){
+  const on = document.documentElement.classList.toggle('contrast');
+  btn.setAttribute('aria-pressed', on);
+  btn.setAttribute('aria-label', on ? 'Desactivar alto contraste' : 'Activar alto contraste');
+}
+let fsLevel = 0; /* -2 a +4, pasos de 10% */
+function fontStep(dir){
+  fsLevel = Math.max(-2, Math.min(4, fsLevel + dir));
+  document.body.style.zoom = 1 + fsLevel * 0.1;
+}
+let speaking = false;
+function toggleListen(btn){
+  const lbl = document.getElementById('listenLbl');
+  if(!('speechSynthesis' in window)){ lbl.textContent = 'No disponible'; return; }
+  if(speaking){
+    speechSynthesis.cancel();
+    speaking = false;
+    btn.setAttribute('aria-pressed','false');
+    lbl.textContent = 'Escuchar';
+    return;
+  }
+  const sel = window.getSelection().toString().trim();
+  const texto = sel || document.getElementById('contenido').innerText.slice(0, 6000);
+  const u = new SpeechSynthesisUtterance(texto);
+  u.lang = 'es-CL';
+  u.rate = 0.95;
+  u.onend = u.onerror = () => {
+    speaking = false;
+    btn.setAttribute('aria-pressed','false');
+    lbl.textContent = 'Escuchar';
+  };
+  speechSynthesis.speak(u);
+  speaking = true;
+  btn.setAttribute('aria-pressed','true');
+  lbl.textContent = 'Detener';
+}
+</script>
+
+</body>
+</html>
